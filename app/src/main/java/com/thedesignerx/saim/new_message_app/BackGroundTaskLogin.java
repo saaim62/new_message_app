@@ -67,7 +67,7 @@ public class BackGroundTaskLogin extends AsyncTask<String, Void, String> {
                 while ((line = bufferedReader.readLine()) != null) {
                     result.append(line);
                 }
-                logdin = true;
+
                 return String.valueOf(result);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -88,6 +88,9 @@ public class BackGroundTaskLogin extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
+        if(result.equals("Welcome user")){
+            logdin = true;
+        }
         if (logdin){
             Intent intent = new Intent(ctx, MainActivity.class);
             ctx.startActivity(intent);
