@@ -5,10 +5,8 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.telephony.SmsManager;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -24,7 +22,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mobileno = (EditText) findViewById(R.id.editText1);
-        message = (EditText) findViewById(R.id.editText2);
+        message = (EditText) findViewById(R.id.editTextPassword);
         sendsms = (ImageButton) findViewById(R.id.button1);
         sendsms.setOnClickListener(new OnClickListener() {
 
@@ -39,8 +37,10 @@ public class MainActivity extends Activity {
 
                 Toast.makeText(getApplicationContext(), "Message Sent successfully!",
                         Toast.LENGTH_LONG).show();
+
             }
         });
     }
+
 
 }

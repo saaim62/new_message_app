@@ -3,6 +3,7 @@ package com.thedesignerx.saim.new_message_app;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.telecom.Call;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -20,8 +21,13 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BackGroundTaskLogin extends AsyncTask<String, Void, String> {
+
 
     Context ctx;
 
@@ -38,7 +44,7 @@ public class BackGroundTaskLogin extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
 
-        String log_url = "http://192.168.1.5:9090/loginapp/login.php";
+        String log_url = "http://192.168.1.7:9090/loginapp/login.php";
         String method = params[0];
         if (method.equals("login")) {
             String username = params[1];
